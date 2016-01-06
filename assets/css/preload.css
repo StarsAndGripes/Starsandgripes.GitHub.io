@@ -1,10 +1,3 @@
-
-/*
-===========================
-Preload.css
-===========================
-*/
-
 #faceoff {
     position: fixed;
     top: 0;
@@ -23,7 +16,7 @@ Preload.css
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #2B8B90;
+    border-top-color: #002569;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
     z-index: 1001;
@@ -38,7 +31,7 @@ Preload.css
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #356F66;
+    border-top-color: #EB0505;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -52,13 +45,13 @@ Preload.css
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #92E0D4;
+    border-top-color: #0F63F5;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
       animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
 
 @-webkit-keyframes spin {
-    0%   { 
+    0%   {
         -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
         -ms-transform: rotate(0deg);  /* IE 9 */
         transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -70,7 +63,7 @@ Preload.css
     }
 }
 @keyframes spin {
-    0%   { 
+    0%   {
         -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
         -ms-transform: rotate(0deg);  /* IE 9 */
         transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -100,7 +93,7 @@ Preload.css
         -ms-transform: translateY(-100%);  /* IE 9 */
             transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
 
-    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
             transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
@@ -119,7 +112,7 @@ Preload.css
     -webkit-transition: all 0.3s 1s ease-out;
             transition: all 0.3s 1s ease-out;
 }
-   
+
 
 
 
