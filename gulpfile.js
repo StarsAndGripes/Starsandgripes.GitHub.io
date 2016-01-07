@@ -1,17 +1,10 @@
 var browserSync = require('browser-sync');
 var gulp = require('gulp');
+var gulpIf = require('gulp-if');
 var haml = require('gulp-haml');
 var sass = require('gulp-sass');
-
-// compile scss files
-gulp.task('sass', function () {
-  return gulp.src('app/assets/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('app/assets/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
+var uglify = require('gulp-uglify');
+var useref = require('gulp-useref');
 
 gulp.task('haml', function () {
   return gulp.src('app/**/*.haml')
@@ -22,7 +15,22 @@ gulp.task('haml', function () {
     }))
 });
 
-//browser sync
+gulp.task('sass', function () {
+  return gulp.src('app/assets/scss/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('app/assets/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+gulp.task('useref', function () {
+  return gulp.src('app/**/*.html')
+  .pipe(useref())
+  .pipe(gulpIf('*.js', uglify()))
+  .pipe(gulp.dest('dist'))
+});
+
 gulp.task('browserSync', function () {
   browserSync({
     server: {
