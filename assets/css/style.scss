@@ -52,7 +52,7 @@ Index
 
 html,
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-size: 16px;
   color: #798289;
   line-height: 1.6;
@@ -151,7 +151,6 @@ section.solid-bg, #footer.solid-bg {
 ------------------------------------------------------------------------
 */
 h1, h2, h3, h4 {
-  /*font-family: 'Dosis', sans-serif;*/
   margin: 10px 0;
   text-transform: uppercase;
 }
@@ -272,7 +271,7 @@ header .navbar-default .navbar-nav > .current > a,
 header .navbar-default .navbar-nav > .current > a:hover,
 header .navbar-default .navbar-nav > .current > a:focus {
     background-color: #00A7DD;
-    color: #FEFEFE;
+    color: #002569;
 }
 
 /*
@@ -285,14 +284,15 @@ header h1 {
   font-size: 0;
 }
 header .nav > li > a {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 900;
   text-transform: capitalize;
   padding: 12px 15px;
   border-radius: 2px;
 }
 
 header .navbar-default .navbar-nav > li > a {
-  color: #00a7dd;
+  color: #ffffff;
 }
 header .navbar-default .navbar-nav > li > a:hover {
   color: #017298;
