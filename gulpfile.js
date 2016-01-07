@@ -1,22 +1,45 @@
 var browserSync = require('browser-sync');
 var cssnano = require('gulp-cssnano');
+var del = require('del');
 var gulp = require('gulp');
 var gulpIf = require('gulp-if');
 var haml = require('gulp-haml');
 var imagemin = require('gulp-imagemin');
+var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 
+gulp.task('build', function(callback) {
+  console.log('building files you magnificent bastard');
+  runSequence('clean:dist',
+    ['sass', 'haml', 'images', 'fonts', 'useref'],
+    callback
+    )
+});
+
+gulp.task('watch', ['browserSync', 'sass'], function () {
+  gulp.watch('app/assets/scss/**/*.scss', ['sass']);
+  gulp.watch('app/*.html`', browserSync.reload);
+  gulp.watch('app/js/**/*.js`', browserSync.reload);
+});
+
+gulp.task('default', function (callback) {
+  runSequence(['build', 'watch'],
+  callback
+  )
+});
+
+//components
 gulp.task('browserSync', function () {
   browserSync({
     server: {
       baseDir: 'app'
     },
   })
-})
+});
 
-gulp.task('build', function () {
+gulp.task('useref', function () {
   return gulp.src('app/**/*.html')
   .pipe(useref())
   .pipe(gulpIf('*.js', uglify()))
@@ -24,10 +47,14 @@ gulp.task('build', function () {
   .pipe(gulp.dest('dist'))
 });
 
+gulp.task('clean:dist', function() {
+  return del.sync('dist')
+});
+
 gulp.task('fonts', function() {
-  return.gulp.src('app/fonts/**/*')
+  return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
-})
+});
 
 gulp.task('haml', function () {
   return gulp.src('app/**/*.haml')
@@ -56,9 +83,3 @@ gulp.task('sass', function () {
     }))
 });
 
-gulp.task('watch', ['browserSync', 'haml', 'sass'], function () {
-  gulp.watch('app/assets/scss/**/*.scss', ['sass']);
-  gulp.watch('app/**/*.haml`', ['haml']);
-  gulp.watch('app/*.html`', browserSync.reload);
-  gulp.watch('app/js/**/*.js`', browserSync.reload);
-});
