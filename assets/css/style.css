@@ -28,7 +28,7 @@ Index
 # - 2.1 - Menu styles
 # - 2.2 - App styles
 # 3 - Banner styles
-# 4 - Intro styles
+# 4 - shows styles
 # 5 - Feature styles
 # 6 - Why it best styles
 # 7 - How it work styles
@@ -572,10 +572,10 @@ section.banner-carousel {
 
 /*
 ========================================================================
-# 4 - Intro styles
+# 4 - shows styles
 ------------------------------------------------------------------------
 */
-.intro {
+.shows {
   overflow: hidden;
   padding: 120px 0;
 }
@@ -588,7 +588,7 @@ h3 {
   font-weight: 600;
   color: #0aabe1;
 }
-.intro .fa {
+.shows .fa {
   display: inline-block;
   font-size: 32px;
   margin-bottom: 10px;
@@ -698,11 +698,11 @@ h3 {
 ------------------------------------------------------------------------
 */
 
-section.description {
+section.press {
   padding-top: 120px;
   padding-bottom: 0;
 }
-.description-list li {
+.press-list li {
   font-size: 20px;
   margin-bottom: 16px;
 }
@@ -712,7 +712,7 @@ section.description {
   height: 20px;
   margin-right: 15px;
 }
-.description-list li .fa {
+.press-list li .fa {
   color: #00A7DD;
   font-size: inherit;
 }
