@@ -50,6 +50,5 @@
   "main": "karma.conf.js",
   "author": "Melissa Patterson",
   "dependencies": {
-    "gulp-haml": "^0.1.6"
   }
 }

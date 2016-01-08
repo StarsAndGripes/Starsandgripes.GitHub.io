@@ -3,7 +3,6 @@ var cssnano = require('gulp-cssnano');
 var del = require('del');
 var gulp = require('gulp');
 var gulpIf = require('gulp-if');
-var haml = require('gulp-haml');
 var imagemin = require('gulp-imagemin');
 var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
@@ -13,15 +12,14 @@ var useref = require('gulp-useref');
 gulp.task('build', function(callback) {
   console.log('building files you magnificent bastard');
   runSequence('clean:dist',
-    ['sass', 'haml', 'images', 'fonts', 'useref'],
+    ['sass', 'images', 'fonts', 'useref'],
     callback
     )
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'haml'], function () {
+gulp.task('watch', ['browserSync', 'sass'], function () {
   gulp.watch('app/assets/scss/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/**/*.haml', ['haml']);
   gulp.watch('app/assets/js/**/*.js', browserSync.reload);
 });
 
@@ -55,15 +53,6 @@ gulp.task('clean:dist', function() {
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
-});
-
-gulp.task('haml', function () {
-  return gulp.src('app/**/*.haml')
-    .pipe(haml())
-    .pipe(gulp.dest('app'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 });
 
 gulp.task('images', function () {
