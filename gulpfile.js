@@ -18,9 +18,9 @@ gulp.task('build', function(callback) {
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function () {
-  gulp.watch('app/assets/scss/*.scss', ['sass']);
+  gulp.watch('app/scss/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/assets/js/**/*.js', browserSync.reload);
+  gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('default', function (callback) {
@@ -56,7 +56,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('images', function () {
-  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg|ico)')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.reload({
@@ -65,9 +65,9 @@ gulp.task('images', function () {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('app/assets/scss/**/*.scss')
+  return gulp.src('app/scss/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('app/assets/css'))
+    .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
