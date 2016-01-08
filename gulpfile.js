@@ -18,10 +18,11 @@ gulp.task('build', function(callback) {
     )
 });
 
-gulp.task('watch', ['browserSync', 'sass'], function () {
-  gulp.watch('app/assets/scss/**/*.scss', ['sass']);
-  gulp.watch('app/*.html`', browserSync.reload);
-  gulp.watch('app/js/**/*.js`', browserSync.reload);
+gulp.task('watch', ['browserSync', 'sass', 'haml'], function () {
+  gulp.watch('app/assets/scss/*.scss', ['sass']);
+  gulp.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/**/*.haml', ['haml']);
+  gulp.watch('app/assets/js/**/*.js', browserSync.reload);
 });
 
 gulp.task('default', function (callback) {
