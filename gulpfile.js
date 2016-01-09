@@ -1,13 +1,20 @@
 var browserSync = require('browser-sync');
-var cssnano = require('gulp-cssnano');
-var del = require('del');
-var gulp = require('gulp');
-var gulpIf = require('gulp-if');
-var imagemin = require('gulp-imagemin');
-var runSequence = require('run-sequence');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var useref = require('gulp-useref');
+    cssnano = require('gulp-cssnano');
+    del = require('del');
+    gulp = require('gulp');
+    gulpIf = require('gulp-if');
+    imagemin = require('gulp-imagemin');
+    neat = require('node-neat').includePaths;
+    runSequence = require('run-sequence');
+    sass = require('gulp-sass');
+    uglify = require('gulp-uglify');
+    useref = require('gulp-useref');
+
+var paths = {
+    scss: './app/scss/*.scss',
+    html: './app/*.html',
+    js: './app/js/**/*.js'
+};
 
 gulp.task('build', function(callback) {
   console.log('building files you magnificent bastard');
@@ -65,8 +72,10 @@ gulp.task('images', function () {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('app/scss/**/*.scss')
-    .pipe(sass())
+  return gulp.src(paths.scss)
+    .pipe(sass({
+        includePaths: ['sass'].concat(neat)
+      }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
