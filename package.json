@@ -26,6 +26,7 @@
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.5",
     "karma-junit-reporter": "^0.2.2",
+    "node-neat": "^1.7.2",
     "protractor": "^2.1.0",
     "run-sequence": "^1.1.5",
     "shelljs": "^0.2.6"
@@ -49,6 +50,5 @@
   "homepage": "https://github.com/angular/angular-seed",
   "main": "karma.conf.js",
   "author": "Melissa Patterson",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
