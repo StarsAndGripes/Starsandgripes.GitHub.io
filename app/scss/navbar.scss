@@ -1,83 +1,88 @@
 @import 'variables';
+@import 'bourbon';
+@import 'neat';
 
 header {
   background-color: #fff;
-  box-shadow:0 0 9px -5px #000;
+  box-shadow: 0 0 9px -5px #000;
   display: none;
   padding: 20px 0;
-  -webkit-box-shadow:0 0 9px -5px #000;
-  -moz-box-shadow:0 0 9px -5px #000;
-}
 
-header .navbar-default {
-  background-color: #fff;
-  border-color: transparent;
-}
-header .navbar-default .navbar-toggle {
-  border-color: #00a7dd;
-  border: 0;
-  border-radius: 2px;
-  margin: 0;
-}
-header .navbar-default .navbar-toggle .icon-bar {
-  width: 30px;
-  height: 3px;
-}
-header .navbar-default .navbar-toggle:hover,
-header .navbar-default .navbar-toggle:focus {
-  background: transparent;
-}
-header .navbar-default .navbar-toggle .icon-bar {
-  background: #00a7dd;
-}
-header .navbar {
-  border-radius: 0;
-  margin-bottom: 0;
-}
-header ul > li  {
-  margin-bottom: 0px;
-}
-header .navbar-default .navbar-nav > .current > a,
-header .navbar-default .navbar-nav > .current > a:hover,
-header .navbar-default .navbar-nav > .current > a:focus {
-    background-color: #00A7DD;
-    color: #002569;
-}
+  .navbar-default {
+    background-color: #fff;
+    border-color: transparent;
 
+    .navbar-toggle {
+      border-color: $blue;
+      border: 0;
+      border-radius: 2px;
+      margin: 0;
 
-/*
-========================================================================
-# - 2.1 - Menu styles
-------------------------------------------------------------------------
-*/
-header h1 {
-  margin: 0;
-  font-size: 0;
-}
-header .nav > li > a {
-  font-family: 'Merriweather', sans-serif;
-  font-weight: 900;
-  text-transform: capitalize;
-  padding: 12px 15px;
-  border-radius: 2px;
-}
+      .icon-bar {
+        width: 30px;
+        background: $blue;
+        height: 3px;
+      }
+    }
 
-header .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-header .navbar-default .navbar-nav > li > a:hover {
-  color: #017298;
-}
-header .navbar-default .navbar-nav > .active > a,
-header .navbar-default .navbar-nav > .active > a:hover,
-header .navbar-default .navbar-nav > .active > a:focus {
-  background-color: #00a7dd;
-  color: #fefefe;
-}
-header .navbar-default .navbar-nav > li > a:hover,
-header .navbar-default .navbar-nav > li > a:focus {
-  color: #00a7dd;
-  border:none;
-}
+    .fa {
+      color: $dark-green;
+    }
 
+    .navbar-toggle:hover,
+    .navbar-toggle:focus {
+      background: transparent;
+    }
 
+    .navbar-nav > li > a {
+      color: $red;
+    }
+
+    .navbar-nav > li > a:hover {
+      color: $navy;
+    }
+
+    .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+      background-color: $blue;
+      color: $red;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+      color: $blue;
+      border: none;
+    }
+
+    .navbar-nav > .current > a,
+    .navbar-nav > .current > a:hover,
+    .navbar-nav > .current > a:focus {
+      background-color: $navy;
+      color: $red;
+    }
+  }
+
+  .navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  ul > li  {
+    margin-bottom: 0px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 0;
+  }
+
+  .nav > li > a {
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 900;
+    text-transform: capitalize;
+    padding: 12px 15px;
+    border-radius: 2px;
+  }
+
+}
