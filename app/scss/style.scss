@@ -64,7 +64,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 a {
-  color: #00a7dd;
+  color: $dark-green;
 }
 a:hover {
   color: #017298;
@@ -93,10 +93,10 @@ ul, li {
   position: relative;
   border-bottom: 1px solid #e1e1e1;
   padding: 0 30px 10px;
-  color: #0aabe1;
+  color: $dark-green;
 }
 .title h2:after {
-  background: none repeat scroll 0 0 #0aabe1;
+  background: none repeat scroll 0 0 $dark-green;
   bottom: -1px;
   content: "";
   height: 1px;
@@ -130,7 +130,6 @@ ul, li {
 }
 .trans-bg {
   position: relative;
-  background: rgba(13, 93, 17, 0.70);
   padding: 120px 0;
 }
 
