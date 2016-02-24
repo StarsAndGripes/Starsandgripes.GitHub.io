@@ -623,7 +623,7 @@ section.video {
   padding: 0 0; }
 
 .video {
-  background: url(../images/video_bg.jpg) no-repeat fixed;
+  background: url(../images/background1.jpg) no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
