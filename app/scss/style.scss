@@ -130,7 +130,7 @@ ul, li {
 }
 .trans-bg {
   position: relative;
-  padding: 120px 0;
+  padding: 50px 0;
 }
 
 ::-moz-selection { background: #A9D0F5; color: #5F5A5A }
@@ -491,6 +491,14 @@ section.banner-carousel {
   background: rgba(0, 0, 0, .38);
 }
 
+.cast-bios {
+  float: right;
+
+  img {
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
 
 /*
 ========================================================================
